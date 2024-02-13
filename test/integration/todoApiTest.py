@@ -7,6 +7,12 @@ import json
 
 import pytest
 
+with open('env.properties') as f:
+    for line in f:
+        if '=' in line:
+            key, value = line.split('=', 1)
+            os.environ[key.strip()] = value.strip()
+
 BASE_URL = os.environ.get("BASE_URL")
 #BASE_URL = "https://v5d7cgb6s3.execute-api.us-east-1.amazonaws.com/Prod"
 DEFAULT_TIMEOUT = 2  # in secs
