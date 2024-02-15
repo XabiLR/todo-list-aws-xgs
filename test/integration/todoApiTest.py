@@ -27,8 +27,8 @@ class TestApi(unittest.TestCase):
         print('---------------------------------------')
         print('Starting - integration test List TODOOOOOOOO')
         print("AAAAA")
-print(BASE_URL)
-print("BBBB")
+        print(BASE_URL)
+        print("BBBB")
         #Add TODO
         url = BASE_URL+"/todos"
         data = {
