@@ -11,8 +11,11 @@ import pytest
 with open('env.properties') as f:
     for line in f:
         if '=' in line:
+            print("ENTRO")
             key, value = line.split('=', 1)
             os.environ[key.strip()] = value.strip()
+            print(key)
+            print(value)
             
 
 
