@@ -1,19 +1,15 @@
+import http.client
 import os
 import unittest
+from urllib.request import urlopen
 import requests
 import json
+
 import pytest
 
-with open('env.properties') as f:
-    for line in f:
-        if '=' in line:
-            key, value = line.split('=', 1)
-            os.environ[key.strip()] = value.strip()
-
 BASE_URL = os.environ.get("BASE_URL")
-BASE_URL = "https://v5d7cgb6s3.execute-api.us-east-1.amazonaws.com/Prod"
-DEFAULT_TIMEOUT = 2  # en segundos
-
+#BASE_URL = "https://v5d7cgb6s3.execute-api.us-east-1.amazonaws.com/Prod"
+DEFAULT_TIMEOUT = 2  # in secs
 
 
 @pytest.mark.api
@@ -26,9 +22,9 @@ class TestApi(unittest.TestCase):
     def test_api_listtodos(self):
         print('---------------------------------------')
         print('Starting - integration test List TODOOOOOOOO')
-        print("AAAAA")
+        print('AAAAA')
         print(BASE_URL)
-        print("BBBB")
+        print('BBBB')
         #Add TODO
         url = BASE_URL+"/todos"
         data = {
@@ -206,6 +202,4 @@ class TestApi(unittest.TestCase):
             response.status_code, 404, "Error en la petición API a {url}"
         )
         print('End - integration test Delete TODO')
-
-if __name__ == "__main__":
-    unittest.main()
+    
