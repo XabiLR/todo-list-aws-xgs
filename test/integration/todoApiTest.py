@@ -13,7 +13,7 @@ with open('env.properties') as f:
         if '=' in line:
             key, value = line.split('=', 1)
             os.environ[key.strip()] = value.strip()
-            print(value.strip())
+            
 
 
 BASE_URL = os.environ.get("BASE_URL")
