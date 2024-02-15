@@ -19,8 +19,8 @@ with open('env.properties') as f:
             
 
 
-BASE_URL = os.environ.get("BASE_URL")
-#BASE_URL = "https://9zw7kqrodi.execute-api.us-east-1.amazonaws.com/Prod"
+#BASE_URL = os.environ.get("BASE_URL")
+BASE_URL = "https://9zw7kqrodi.execute-api.us-east-1.amazonaws.com/Prod"
 DEFAULT_TIMEOUT = 2  # in secs
 
 
