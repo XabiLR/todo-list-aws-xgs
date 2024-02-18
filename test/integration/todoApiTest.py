@@ -7,8 +7,17 @@ import json
 
 import pytest
 
+#BASE_URL = os.environ.get("BASE_URL")
+#BASE_URL = "https://m0qwfec693.execute-api.us-east-1.amazonaws.com/Prod"
+#BASE_URL = "https://lns0ulrwe4.execute-api.us-east-1.amazonaws.com/Prod"
+
+with open('env.properties') as f:
+    for line in f:
+        key, value = line.split('=',1)
+        os.environ[key.strip()] = value.strip()
+
 BASE_URL = os.environ.get("BASE_URL")
-#BASE_URL = "https://v5d7cgb6s3.execute-api.us-east-1.amazonaws.com/Prod"
+
 DEFAULT_TIMEOUT = 2  # in secs
 
 
@@ -21,7 +30,7 @@ class TestApi(unittest.TestCase):
 
     def test_api_listtodos(self):
         print('---------------------------------------')
-        print('Starting - integration test List TODOOOOOOOO')
+        print('Starting - integration test List TODO')
         #Add TODO
         url = BASE_URL+"/todos"
         data = {
